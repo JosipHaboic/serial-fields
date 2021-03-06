@@ -10,11 +10,9 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import SerialPortPanel from '../components/serial-port-panel/SerialPortPanel.vue';
 
 @Component({
   components: {
-    SerialPortPanel,
   },
 })
 export default class Home extends Vue {}
