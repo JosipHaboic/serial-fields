@@ -1,0 +1,14 @@
+@import './color-scheme.css';
+@import './fonts.css';
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+body {
+	font-family: 'Roboto Condensed', sans-serif;
+}
