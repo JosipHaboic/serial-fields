@@ -1,16 +1,9 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" id="logo" src="../assets/Arduino_Logo.svg">
-    <h4 id="sublogo">Serial Port Monitor and Tools</h4>
+  <div class="container">
+    <img alt="logo" id="logo" src="../assets/arduino.svg">
+    <h2 id="sublogo" class="mt-5">Serial Port Monitor and Tools</h2>
     <b-container>
-      <b-row>
-        <b-col cols="8">
-        </b-col>
-        <b-col cols="4">
-          <SerialPortPanel />
-        </b-col>
-      </b-row>
-
+      <button class="btn btn-dark btn-lg mt-5">To Controll Panel</button>
     </b-container>
   </div>
 </template>
@@ -28,12 +21,13 @@ export default class Home extends Vue {}
 </script>
 
 
-<style>
+<style scoped>
 #logo {
-  max-height: 128px;
+  width: 25vw;
+  /* height: 33vh; */
 }
 
 #sublogo {
-  color: #228888;
+  color: #222222;
 }
 </style>
