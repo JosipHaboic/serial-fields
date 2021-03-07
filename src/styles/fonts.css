@@ -1,4 +1,9 @@
 @font-face {
-	src: url("../assets/fonts/Roboto/Roboto-Regular.ttf");
-	font-family: "Roboto";
+	src: url("../assets/fonts/Oxanium/static/Oxanium-Regular.ttf");
+	font-family: "Oxanium";
+}
+
+@font-face {
+	src: url("../assets/fonts/Oxanium/static/Oxanium-Medium.ttf");
+	font-family: "Oxanium Medium";
 }
