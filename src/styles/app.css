@@ -4,9 +4,8 @@
 
 #logo {
 	width: 25vw;
-	/* height: 33vh; */
 }
 
-#sublogo {
+#sub-logo {
 	color: var(--primary-1);
 }
