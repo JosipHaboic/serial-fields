@@ -54,9 +54,3 @@
 	color: var(--light);
 	transition: all 1s;
 }
-
-/* .btn:active {
-	border-color: var(--bdazzled-blue);
-	color: var(--bdazzled-blue);
-	transition: all 1s;
-} */
