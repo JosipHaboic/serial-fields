@@ -2,7 +2,7 @@
   <div class="container">
     <img alt="logo" id="logo" src="../assets/andromeda/logo_transparent.png">
     <h2 id="sub-logo" class="mt-5">Serial Port Monitor and Tools</h2>
-      <button class="btn btn-dark btn-lg mt-5">To Controll Panel</button>
+      <button class="btn">To Controll Panel</button>
   </div>
 </template>
 

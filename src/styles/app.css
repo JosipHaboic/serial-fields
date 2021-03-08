@@ -2,10 +2,55 @@
 @import './skeleton.css';
 @import './base.css';
 
+
 #logo {
 	width: 25vw;
 }
 
 #sub-logo {
 	color: var(--primary-1);
+}
+
+#nav {
+	display: flex;
+	justify-content: flex-end;
+	padding: 0.25vh;
+	/* background: linear-gradient(to left, var(--dark), transparent); */
+}
+
+#nav a:last-child {
+	margin-right: 2vw;
+}
+
+#nav a {
+	color: var(--light-gray);
+	text-decoration: none;
+	margin: 0 12px;
+	padding: 4px 12px;
+	transition: color 1s ease;
+	-webkit-transition: color 1s ease;
+	-moz-transition: color 1s ease;
+	-o-transition: color 1s ease;
+	-ms-transition: color 1s ease;
+}
+
+#nav a:hover {
+	color: var(--cg-blue);
+	transition: color 1s ease;
+	-webkit-transition: color 1s ease;
+	-moz-transition: color 1s ease;
+	-o-transition: color 1s ease;
+	-ms-transition: color 1s ease;
+}
+
+.btn {
+	border-color: var(--dark);
+	color: var(--dark);
+	transition: all 1s;
+}
+
+.btn:hover {
+	border-color: var(--powder-blue);
+	color: var(--powder-blue);
+	transition: all 1s;
 }

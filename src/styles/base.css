@@ -4,12 +4,15 @@
 * {
 	box-sizing: border-box;
 	font-family: 'Oxanium';
+	color: var(--dark);
 }
 
 html {
 	font-family: 'Oxanium';
 	padding: 0;
 	margin: 0;
+	background-image: linear-gradient(to bottom, var(--dark), var(--cg-blue)),
+	                  linear-gradient(to top, #247291, #698dab, #9cabc2, #c8cbd7, #eeeeee);
 }
 
 body {
