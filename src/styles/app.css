@@ -8,22 +8,22 @@
 }
 
 #sub-logo {
-	color: var(--primary-1);
+	color: var(--orange-yellow);
 }
 
-#nav {
+#top-nav {
 	display: flex;
 	justify-content: flex-end;
 	padding: 0.25vh;
 	/* background: linear-gradient(to left, var(--dark), transparent); */
 }
 
-#nav a:last-child {
+#top-nav a:last-child {
 	margin-right: 2vw;
 }
 
-#nav a {
-	color: var(--light-gray);
+#top-nav a {
+	color: var(--light);
 	text-decoration: none;
 	margin: 0 12px;
 	padding: 4px 12px;
@@ -34,8 +34,8 @@
 	-ms-transition: color 1s ease;
 }
 
-#nav a:hover {
-	color: var(--cg-blue);
+#top-nav a:hover {
+	color: var(--french-sky-blue);
 	transition: color 1s ease;
 	-webkit-transition: color 1s ease;
 	-moz-transition: color 1s ease;
@@ -43,14 +43,20 @@
 	-ms-transition: color 1s ease;
 }
 
-.btn {
-	border-color: var(--dark);
-	color: var(--dark);
+.btn, button {
+	border-color: var(--french-sky-blue);
+	color: var(--french-sky-blue);
 	transition: all 1s;
 }
 
-.btn:hover {
-	border-color: var(--powder-blue);
-	color: var(--powder-blue);
+.btn:hover, button:hover {
+	border-color: var(--light);
+	color: var(--light);
 	transition: all 1s;
 }
+
+/* .btn:active {
+	border-color: var(--bdazzled-blue);
+	color: var(--bdazzled-blue);
+	transition: all 1s;
+} */
