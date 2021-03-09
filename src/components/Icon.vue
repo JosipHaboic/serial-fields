@@ -1,5 +1,5 @@
 <template>
-	<svg :src="src"></svg>
+	<img class="sidebar-icon" :src="src" />
 </template>
 
 <script lang="ts">

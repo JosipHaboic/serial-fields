@@ -1,6 +1,7 @@
 @import './normalize.css';
-@import './skeleton.css';
 @import './base.css';
+@import './layout.css';
+@import './vars.css';
 
 
 #logo {
@@ -14,12 +15,9 @@
 #top-nav {
 	display: flex;
 	justify-content: flex-end;
-	padding: 0.25vh;
-	/* background: linear-gradient(to left, var(--dark), transparent); */
-}
-
-#top-nav a:last-child {
-	margin-right: 2vw;
+	font-size: 0.75rem;
+	padding: 1vh 0;
+	/* background: linear-gradient(to right, var(--dark), transparent); */
 }
 
 #top-nav a {
@@ -35,7 +33,7 @@
 }
 
 #top-nav a:hover {
-	color: var(--french-sky-blue);
+	color: var(--light);
 	transition: color 1s ease;
 	-webkit-transition: color 1s ease;
 	-moz-transition: color 1s ease;
@@ -43,14 +41,35 @@
 	-ms-transition: color 1s ease;
 }
 
-.btn, button {
-	border-color: var(--french-sky-blue);
-	color: var(--french-sky-blue);
+button, .btn {
+	outline: none;
+	border: none;
+	background: var(--bdazzled-blue);
+	color: var(--light);
 	transition: all 1s;
+	padding: var(--padding);
+	border-radius: 4px;
+	box-shadow: 0 10px 10px -5px var(--dark);
 }
 
 .btn:hover, button:hover {
-	border-color: var(--light);
+	border: none;
 	color: var(--light);
 	transition: all 1s;
+	box-shadow: 0 10px 10px -15px var(--dark);
+}
+
+.btn:active,
+button:active {
+	border: none;
+	color: var(--light);
+	transition: all 1s;
+	box-shadow: 0 10px 10px -15px var(--dark);
+}
+
+.sidebar-icon {
+	width: 32px;
+	stroke: aqua;
+	fill: aqua;
+	color: aqua;
 }

@@ -11,7 +11,7 @@ html {
 	font-family: 'Oxanium';
 	padding: 0;
 	margin: 0;
-	background-image: linear-gradient(to bottom right, var(--indigo-dye), var(--space-cadet));
+	background-image: linear-gradient(to bottom right, var(--indigo-dye), var(--dark));
 }
 
 body {
