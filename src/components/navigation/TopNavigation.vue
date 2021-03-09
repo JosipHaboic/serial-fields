@@ -1,6 +1,6 @@
 <template>
 	<div id="top-nav">
-		<a v-for="link in links" :key="link.href" :href="link.href" :class="link.class">
+		<a v-for="link in links" :key="link.text" :href="link.href" :class="link.class">
 			{{ link.text }}
 		</a>
 	</div>
@@ -14,7 +14,7 @@ export default Vue.extend({
 	name: 'TopNavigation',
 	props: {
 		links: {
-			type: Object,
+			type: Array,
 			required: true,
 		},
 	}

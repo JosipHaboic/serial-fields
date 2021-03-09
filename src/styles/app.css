@@ -68,8 +68,8 @@ button:active {
 }
 
 .sidebar-icon {
-	width: 32px;
-	stroke: aqua;
-	fill: aqua;
-	color: aqua;
+	width: 64px;
+	height: 64px;
+	stroke: var(--french-sky-blue) !important;
+	fill: var(--french-sky-blue) !important;
 }
