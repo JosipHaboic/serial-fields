@@ -6,11 +6,11 @@
 
 <script>
 import Vue from 'vue';
-import { iconsRegister } from './icons/iconRegister';
+import { icons } from './icons';
 
 export default Vue.extend({
 	components: {
-		...iconsRegister,
+		...icons,
 	},
 	props: {
 		icons: {

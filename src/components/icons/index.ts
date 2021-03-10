@@ -1,6 +1,6 @@
 import USBInterfaceIcon from './USBInterfaceIcon.vue';
 
 
-export const iconsRegister = {
+export const icons = {
 	'usb-interface': USBInterfaceIcon,
 };
