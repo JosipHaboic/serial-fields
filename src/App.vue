@@ -15,7 +15,7 @@ export default Vue.extend({
   data: () => {
     return {
       links: [
-        {href: '/', class: 'nav-link router-link-exact-active router-link-active', text: 'Home'},
+        {href: '/', class: 'link', text: 'Home'},
         {href: '/about', class: 'link', text: 'About'},
       ]
     }

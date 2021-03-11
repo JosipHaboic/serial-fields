@@ -1,8 +1,8 @@
 <template>
 	<div id="top-nav">
-		<a v-for="link in links" :key="link.text" :href="link.href" :class="link.class">
+		<router-link v-for="link in links" :key="link.text" :to="link.href" :class="link.class" exact="true">
 			{{ link.text }}
-		</a>
+		</router-link>
 	</div>
 </template>
 

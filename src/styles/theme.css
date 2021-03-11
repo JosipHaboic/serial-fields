@@ -41,6 +41,14 @@
 	-ms-transition: color 1s ease;
 }
 
+#top-nav .router-link-active {
+	color: var(--french-sky-blue);
+}
+
+#top-nav .router-link-exact-active {
+	color: var(--french-sky-blue);
+}
+
 button, .btn {
 	outline: none;
 	border: none;
