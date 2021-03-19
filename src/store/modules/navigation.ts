@@ -1,5 +1,8 @@
+import { NavigationState } from './navigationState';
+
+
 export const navigation = {
 	state: () => ({
-		navState: 'normal',
+		topNav: NavigationState.MAXIMIZED,
 	}),
-}
+};

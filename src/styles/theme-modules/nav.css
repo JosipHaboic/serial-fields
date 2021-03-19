@@ -1,0 +1,38 @@
+@import "../palette.css";
+
+#top-nav {
+	display: flex;
+	justify-content: flex-end;
+	font-size: 0.75rem;
+	padding: 1vh 0;
+	/* background: linear-gradient(to right, var(--dark), transparent); */
+}
+
+#top-nav a {
+	color: var(--light);
+	text-decoration: none;
+	margin: 0 12px;
+	padding: 4px 12px;
+	transition: color 1s ease;
+	-webkit-transition: color 1s ease;
+	-moz-transition: color 1s ease;
+	-o-transition: color 1s ease;
+	-ms-transition: color 1s ease;
+}
+
+#top-nav a:hover {
+	color: var(--orange-yellow);
+	transition: color 1s ease;
+	-webkit-transition: color 1s ease;
+	-moz-transition: color 1s ease;
+	-o-transition: color 1s ease;
+	-ms-transition: color 1s ease;
+}
+
+#top-nav .router-link-active {
+	color: var(--french-sky-blue);
+}
+
+#top-nav .router-link-exact-active {
+	color: var(--french-sky-blue);
+}
