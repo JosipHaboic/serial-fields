@@ -2,10 +2,10 @@
 
 #top-nav {
 	display: flex;
+	flex-direction: row;
 	justify-content: flex-end;
 	font-size: 0.75rem;
 	padding: 1vh 0;
-	/* background: linear-gradient(to right, var(--dark), transparent); */
 }
 
 #top-nav a {
@@ -35,4 +35,22 @@
 
 #top-nav .router-link-exact-active {
 	color: var(--french-sky-blue);
+}
+
+@media screen and (max-width: 425px) {
+	#top-nav {
+		flex-direction: column;
+		font-size: 0.75rem;
+		padding: 1vh 0;
+	}
+
+	#top-nav a {
+		margin: 0 12px;
+		padding: 4px 12px;
+		transition: color 1s ease;
+		-webkit-transition: color 1s ease;
+		-moz-transition: color 1s ease;
+		-o-transition: color 1s ease;
+		-ms-transition: color 1s ease;
+	}
 }
