@@ -16,6 +16,7 @@ export default Vue.extend({
     return {
       links: [
         {href: '/', class: 'link', text: 'Home'},
+        {href: '/dashboard', class: 'link', text: 'Dashboard'},
         {href: '/about', class: 'link', text: 'About'},
       ]
     }
