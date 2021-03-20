@@ -42,13 +42,13 @@ export default Vue.extend({
 	.menu-icon-bar-1, .menu-icon-bar-2, .menu-icon-bar-3 {
 	  width: 35px;
 	  height: 2px;
-	  background-color: var(--color-0-2);
+	  background-color: #ffffff;
 	  margin: 6px 0;
 	  transition: 0.25s;
 	}
 
 	.menu-icon--closed .menu-icon-bar-1 {
-		background-color: var(--color-0-1);
+		background-color: #ffffff;
 		margin: 0px 0;
 		transition: 0.25s;
 	  /* -webkit-transform: rotate(-45deg) translate(-9px, 6px) ; */
@@ -56,14 +56,14 @@ export default Vue.extend({
 	}
 
 	.menu-icon--closed .menu-icon-bar-2 {
-		background-color: var(--color-0-1);
+		background-color: #ffffff;
 		margin: 0px 0;
 	  	transition: 0.25s;
 	  /* opacity: 0; */
 	}
 
 	.menu-icon--closed .menu-icon-bar-3 {
-		background-color: var(--color-0-1);
+		background-color: #ffffff;
 		margin: 0px 0;
 	  	transition: 0.25s;
 	  /* -webkit-transform: rotate(45deg) translate(-8px, -8px); */
