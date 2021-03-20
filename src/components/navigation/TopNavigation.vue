@@ -1,13 +1,11 @@
 <template>
-	<div id="top-nav-container">
-
+	<div id="top-nav-container" v-bind:class="{'top-nav--closed': this.navOpen}">
 		<div id="top-nav" v-bind:class="{'top-nav--closed': this.navOpen}">
 			<router-link v-for="link in links" :key="link.text" :to="link.href" :class="link.class" :exact=true>
 				{{ link.text }}
 			</router-link>
-
-			<nav-icon id="nav-icon" :onToggle="this.toggle"/>
 		</div>
+		<nav-icon id="nav-icon" :onToggle="this.toggle"/>
 	</div>
 </template>
 
@@ -39,25 +37,3 @@ export default Vue.extend({
 	}
 });
 </script>
-
-<style scoped>
-#nav-icon {
-	display: none;
-}
-
-.top-nav--closed {
-	height: 0px;
-	padding: 0 0 0 0;
-}
-
-@media screen and (max-width: 425px) {
-	#nav-icon {
-		display: initial;
-	}
-
-	.top-nav--closed {
-		height: 0px;
-		padding: 0 0 0 0;
-	}
-}
-</style>
