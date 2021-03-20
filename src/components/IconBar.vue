@@ -1,6 +1,6 @@
 <template>
 	<div class="icon-bar icon-bar-vertical">
-		<component :is="iconsRegister[name]" v-for="name in icons" :key="name"></component>
+		<component :is="iconRegister[name]" v-for="name in icons" :key="name"></component>
 	</div>
 </template>
 
@@ -17,10 +17,8 @@ export default Vue.extend({
 			type: Array,
 		}
 	},
-	data: () => {
-		return {
-			iconsRegister,
-		};
-	},
+	data: () => ({
+			iconRegister: icons,
+	}),
 })
 </script>
