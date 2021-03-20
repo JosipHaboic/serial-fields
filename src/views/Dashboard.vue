@@ -1,16 +1,20 @@
 <template>
 	<div class="container">
-		<icon-bar :icons="['usb-interface']"></icon-bar>
+		<sidenav :links="sidenavLink" />
 	</div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import IconBar from '../components/IconBar.vue';
+import SideNav from '../components/navigation/SideNav.vue';
 
 export default Vue.extend({
 	components: {
-		'icon-bar': IconBar,
+		'sidenav': SideNav,
 	},
+	data: () => ({
+		sidenavLinks: [
+		]
+	})
 })
 </script>
