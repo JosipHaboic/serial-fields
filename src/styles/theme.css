@@ -10,13 +10,13 @@
 }
 
 #sub-logo {
-	color: var(--orange-yellow);
+	color: var(--color-2-0);
 }
 
 button, .btn {
 	outline: none;
 	border: none;
-	background: var(--bdazzled-blue);
+	background: var(--color-0-3);
 	color: var(--light);
 	transition: all 1s;
 	padding: var(--pd);
@@ -42,6 +42,6 @@ button:active {
 .sidebar-icon {
 	width: 64px;
 	height: 64px;
-	stroke: var(--french-sky-blue) !important;
-	fill: var(--french-sky-blue) !important;
+	stroke: var(--color-0-0) !important;
+	fill: var(--color-0-0) !important;
 }
