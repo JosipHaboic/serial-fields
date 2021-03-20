@@ -1,7 +1,7 @@
 @import './normalize.css';
 @import './html-overwrite.css';
 @import './layout.css';
-@import './theme-modules/nav.css';
+@import './modules/nav.css';
 @import './vars.css';
 
 
