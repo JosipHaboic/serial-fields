@@ -1,18 +1,24 @@
 @import "../palette.css";
 
+#top-nav-container {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	height: 32px;
+	width: 100%;
+}
+
 #top-nav {
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-end;
 	font-size: 0.75rem;
-	padding: 1vh 0;
 }
 
 #top-nav a {
 	color: var(--light);
 	text-decoration: none;
 	margin: 0 12px;
-	padding: 4px 12px;
 	transition: color 1s ease;
 	-webkit-transition: color 1s ease;
 	-moz-transition: color 1s ease;
@@ -21,7 +27,7 @@
 }
 
 #top-nav a:hover {
-	color: var(--orange-yellow);
+	color: var(--color-2-0);
 	transition: color 1s ease;
 	-webkit-transition: color 1s ease;
 	-moz-transition: color 1s ease;
@@ -30,23 +36,30 @@
 }
 
 #top-nav .router-link-active {
-	color: var(--french-sky-blue);
+	color: var(--color-0-0);
 }
 
 #top-nav .router-link-exact-active {
-	color: var(--french-sky-blue);
+	color: var(--color-0-0);
 }
 
 @media screen and (max-width: 425px) {
+	#top-nav-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: 180px;
+		width: 100%;
+	}
+
 	#top-nav {
 		flex-direction: column;
+		align-items: center;
 		font-size: 0.75rem;
-		padding: 1vh 0;
 	}
 
 	#top-nav a {
-		margin: 0 12px;
-		padding: 4px 12px;
+		margin: 4px 0;
 		transition: color 1s ease;
 		-webkit-transition: color 1s ease;
 		-moz-transition: color 1s ease;
