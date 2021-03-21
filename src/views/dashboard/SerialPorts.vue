@@ -1,13 +1,13 @@
 <template>
 	<div class="container">
-		<ul>
-			<li v-for="port in ports" :key="port.path" class="port">
+		<div class="port-list">
+			<div v-for="port in ports" :key="port.path" class="port-list-item">
 				<router-link class="link" :to="route(port.path)">
-					<div class="port-path">{{ port.path }}</div>
-					<div class="port-status">{{ portStatus(port.path) }}</div>
+					{{ port.path }}
 				</router-link>
-			</li>
-		</ul>
+				<div class="port-status" v-bind:class="portStatus(port.path)">•</div>
+			</div>
+		</div>
 		<router-view></router-view>
 	</div>
 </template>
@@ -25,7 +25,7 @@ export default Vue.extend({
 	}),
 	methods: {
 		portStatus(portPath?: string) {
-			return 'OPEN';
+			return portPath === 'COM3' ? 'port--open' : 'port--closed';
 		},
 		route: (path: string) => {
 			return `/serial-ports/${path}`;
@@ -33,9 +33,3 @@ export default Vue.extend({
 	},
 });
 </script>
-
-<style scoped>
-.port {
-	color: var(--color-0-1);
-}
-</style>

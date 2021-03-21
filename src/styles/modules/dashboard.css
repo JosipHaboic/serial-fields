@@ -4,11 +4,26 @@
 	display: flex;
 }
 
-.port {
-	color: var(--color-0-1);
-	list-style-type: none;
+.port-list {
+	display: flex;
+	flex-direction: column;
 }
 
-.port-path {
+.port-list-item {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 	color: var(--color-0-1);
+}
+
+.port-status {
+	font-size: 2rem;
+}
+
+.port--open {
+	color: var(--color-1-0);
+}
+
+.port--closed {
+	color: var(--color-3-0);
 }
