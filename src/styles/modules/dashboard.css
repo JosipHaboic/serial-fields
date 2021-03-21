@@ -1,12 +1,13 @@
 @import "../palette.css";
 
+
 .dashboard {
 	display: flex;
 }
 
 .port-list {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 }
 
 .port-list-item {
@@ -18,12 +19,14 @@
 
 .port-status {
 	font-size: 2rem;
+	width: 2vw;
+	height: 2vh;
 }
 
 .port--open {
-	color: var(--color-1-0);
+	background-color: var(--color-1-0);
 }
 
 .port--closed {
-	color: var(--color-3-0);
+	background-color: var(--color-3-0);
 }
