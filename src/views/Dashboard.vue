@@ -13,7 +13,7 @@ import SideNav from '../components/navigation/SideNav.vue';
 
 export default Vue.extend({
 	components: {
-		'sidenav': SideNav,
+		sidenav: SideNav,
 	},
 	data: () => ({
 		sidenavLinks: [
@@ -21,7 +21,7 @@ export default Vue.extend({
 			{ class: 'link', href: '/dashboard/serial-ports', text: 'Graphs'},
 			{ class: 'link', href: '/dashboard/serial-ports', text: 'Data'},
 			{ class: 'link', href: '/dashboard/serial-ports', text: 'Settings'},
-		]
-	})
-})
+		],
+	}),
+});
 </script>

@@ -3,7 +3,8 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from 'vue';
+
 export default Vue.extend({
 	props: {
 		name: {
@@ -15,5 +16,5 @@ export default Vue.extend({
 			return require('../assets/icons/' + icon + '.svg');
 		},
 	},
-})
+});
 </script>

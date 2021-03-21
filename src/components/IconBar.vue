@@ -15,10 +15,10 @@ export default Vue.extend({
 	props: {
 		icons: {
 			type: Array,
-		}
+		},
 	},
 	data: () => ({
 			iconRegister: icons,
 	}),
-})
+});
 </script>

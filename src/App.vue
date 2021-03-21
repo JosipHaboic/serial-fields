@@ -7,21 +7,20 @@
 
 <script lang="ts">
 import TopNavigation from './components/navigation/TopNavigation.vue';
-import Vue from 'vue'
+import Vue from 'vue';
+
 export default Vue.extend({
   components: {
     'top-nav': TopNavigation,
   },
-  data: () => {
-    return {
+  data: () => ({
       links: [
         {href: '/', class: 'link', text: 'Home'},
         {href: '/dashboard', class: 'link', text: 'Dashboard'},
         {href: '/about', class: 'link', text: 'About'},
-      ]
-    }
-  }
-})
+      ],
+    }),
+});
 </script>
 
 <style>

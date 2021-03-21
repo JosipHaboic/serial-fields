@@ -11,7 +11,7 @@
 
 
 <script>
-import Vue from 'vue'
+import Vue from 'vue';
 import NavIcon from './NavIcon.vue';
 
 export default Vue.extend({
@@ -33,7 +33,7 @@ export default Vue.extend({
 			if (this !== undefined) {
 				this.navOpen = state;
 			}
-		}
-	}
+		},
+	},
 });
 </script>

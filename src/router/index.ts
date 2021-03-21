@@ -24,7 +24,7 @@ const routes: RouteConfig[] = [
         path: 'serial-ports',
         component: () => import(/* webpackChunkName: "serial-ports" */ '../views/dashboard/SerialPorts.vue'),
       },
-    ]
+    ],
   },
 ];
 

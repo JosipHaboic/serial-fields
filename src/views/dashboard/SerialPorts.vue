@@ -18,18 +18,18 @@ import Vue from 'vue';
 export default Vue.extend({
 	data: () => ({
 		ports: [
-			{ path: 'COM5',},
-			{ path: 'COM3',},
-			{ path: 'COM1',},
-		]
+			{ path: 'COM5'},
+			{ path: 'COM3'},
+			{ path: 'COM1'},
+		],
 	}),
 	methods: {
 		portStatus(portPath?: string) {
-			return "OPEN";
+			return 'OPEN';
 		},
 		route: (path: string) => {
 			return `/serial-ports/${path}`;
-		}
+		},
 	},
 });
 </script>

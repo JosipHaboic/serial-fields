@@ -12,13 +12,13 @@
 </template>
 
 <script>
-import Vue from 'vue'
+import Vue from 'vue';
 export default Vue.extend({
 	props: {
 		links: {
 			type: Array,
 			required: false,
-		}
+		},
 	},
-})
+});
 </script>
