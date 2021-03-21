@@ -19,6 +19,12 @@ const routes: RouteConfig[] = [
     path: '/dashboard',
     name: 'Dashboard',
     component: () => import(/* webpackChunkName: "dashboard" */ '../views/Dashboard.vue'),
+    children: [
+      {
+        path: 'serial-ports',
+        component: () => import(/* webpackChunkName: "serial-ports" */ '../views/dashboard/SerialPorts.vue'),
+      },
+    ]
   },
 ];
 
