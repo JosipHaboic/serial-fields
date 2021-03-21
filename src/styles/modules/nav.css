@@ -1,11 +1,12 @@
 @import "../palette.css";
+@import "../vars.css";
 
 
 #top-nav-container {
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
-	height: 32px;
+	height: 5vh;
 	width: 100%;
 }
 
@@ -13,10 +14,10 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-end;
-	font-size: 0.75rem;
 }
 
 #top-nav a {
+	font-size: var(--sm);
 	color: var(--light);
 	text-decoration: none;
 	margin: 0 12px;
@@ -46,6 +47,41 @@
 
 #nav-icon {
 	display: none;
+}
+
+#side-nav {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 200px;
+	height: 95vh;
+	padding: 0 var(--sm);
+	/* position: absolute; */
+	/* left: 0; */
+	/* to navigation is height of 5vh */
+	/* top: 5vh; */
+}
+
+#side-nav .side-nav-item {
+	color: var(--light);
+	padding: var(--sm) 0 var(--sm) 0;
+	font-size: var(--sm);
+	cursor: pointer;
+	transition: color 1s ease;
+	-webkit-transition: color 1s ease;
+	-moz-transition: color 1s ease;
+	-o-transition: color 1s ease;
+	-ms-transition: color 1s ease;
+}
+
+#side-nav .side-nav-item:hover {
+	color: var(--color-2-0);
+	transition: color 1s ease;
+	-webkit-transition: color 1s ease;
+	-moz-transition: color 1s ease;
+	-o-transition: color 1s ease;
+	-ms-transition: color 1s ease;
 }
 
 
