@@ -1,3 +1,14 @@
+@import "../palette.css";
+
 .dashboard {
 	display: flex;
+}
+
+.port {
+	color: var(--color-0-1);
+	list-style-type: none;
+}
+
+.port-path {
+	color: var(--color-0-1);
 }
