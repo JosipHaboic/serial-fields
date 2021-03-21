@@ -5,7 +5,7 @@
 				<router-link class="link" :to="route(port.path)">
 					{{ port.path }}
 				</router-link>
-				<div class="port-status" v-bind:class="portStatus(port.path)">•</div>
+				<div class="port-status" v-bind:class="portStatus(port.path)"></div>
 			</div>
 		</div>
 		<router-view></router-view>
@@ -28,7 +28,7 @@ export default Vue.extend({
 			return portPath === 'COM3' ? 'port--open' : 'port--closed';
 		},
 		route: (path: string) => {
-			return `/serial-ports/${path}`;
+			return `/dashboard/serial-ports/${path}`;
 		},
 	},
 });
