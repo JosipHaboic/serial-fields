@@ -2,6 +2,7 @@
 @import './html-overwrite.css';
 @import './layout.css';
 @import './modules/nav.css';
+@import './modules/dashboard.css';
 @import './vars.css';
 
 
@@ -22,6 +23,27 @@ button, .btn {
 	transition: all 1s;
 	padding: var(--pd);
 	border-radius: 4px;
+}
+
+.link {
+	font-size: var(--sm);
+	color: var(--light);
+	text-decoration: none;
+	margin: 0 12px;
+	transition: color 1s ease;
+	-webkit-transition: color 1s ease;
+	-moz-transition: color 1s ease;
+	-o-transition: color 1s ease;
+	-ms-transition: color 1s ease;
+}
+
+.link:hover {
+	color: var(--color-2-0);
+	transition: color 1s ease;
+	-webkit-transition: color 1s ease;
+	-moz-transition: color 1s ease;
+	-o-transition: color 1s ease;
+	-ms-transition: color 1s ease;
 }
 
 .btn:hover, button:hover {

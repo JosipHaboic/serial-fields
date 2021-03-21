@@ -1,6 +1,6 @@
 :root {
 	--sm: 0.75rem;
 
-	--pd: 8px 16px;
-	--pd-lg: 16px 32px;
+	--pd: 0.5rem;
+	--pd-lg: 1rem;
 }
