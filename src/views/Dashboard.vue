@@ -1,6 +1,6 @@
 <template>
 	<div class="dashboard">
-		<sidenav :links="sidenavLink" class="dashboard-nav" />
+		<sidenav :links="sidenavLinks" class="dashboard-nav" />
 		<div class="dashboard-view">
 			<router-view></router-view>
 		</div>
@@ -17,6 +17,10 @@ export default Vue.extend({
 	},
 	data: () => ({
 		sidenavLinks: [
+			{ class: 'link', href: '/dashboard/serial-ports', text: 'Serial Ports'},
+			{ class: 'link', href: '/dashboard/serial-ports', text: 'Graphs'},
+			{ class: 'link', href: '/dashboard/serial-ports', text: 'Data'},
+			{ class: 'link', href: '/dashboard/serial-ports', text: 'Settings'},
 		]
 	})
 })

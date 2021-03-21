@@ -2,7 +2,7 @@
 	<div id="side-nav">
 		<div class="btn-close"></div>
 		<router-link
-			v-for="item in sidebarItems"
+			v-for="item in links"
 			v-bind:class="item.class"
 			:key="item.text"
 			:to="item.href">
@@ -20,13 +20,5 @@ export default Vue.extend({
 			required: false,
 		}
 	},
-	data: () => ({
-		sidebarItems: [
-			{ class: 'link', href: '/dashboard/serial-ports', text: 'Serial Ports'},
-			{ class: 'link', href: '/dashboard/serial-ports', text: 'Graphs'},
-			{ class: 'link', href: '/dashboard/serial-ports', text: 'Data'},
-			{ class: 'link', href: '/dashboard/serial-ports', text: 'Settings'},
-		]
-	})
 })
 </script>
