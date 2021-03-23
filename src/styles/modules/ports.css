@@ -1,0 +1,42 @@
+@import "../vars.css";
+@import "../palette.css";
+
+.port-list-container {
+	padding: var(--sm);
+	border-color: var(--color-0-3);
+}
+
+.port-list-title {
+	text-transform: lowercase;
+	color: var(--light);
+}
+
+.port-list {
+	display: flex;
+	flex-direction: column;
+	padding: 0 var(--sm);
+	height: 50vh;
+}
+
+.port-list-item {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	color: var(--color-0-1);
+}
+
+.port-status {
+	font-size: 2rem;
+	width: 2vw;
+	height: 2vh;
+}
+
+.port--open {
+	background-color: var(--color-1-0);
+	transition: all 1s;
+}
+
+.port--closed {
+	background-color: var(--color-3-0);
+	transition: all 1s;
+}
