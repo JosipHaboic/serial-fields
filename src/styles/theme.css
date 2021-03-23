@@ -5,6 +5,18 @@
 @import './modules/dashboard.css';
 @import './vars.css';
 
+.warning {
+	color: var(--color-3-0);
+}
+
+.info {
+	color: var(--color-0-0);
+}
+
+.message {
+	font-size: 0.75rem;
+	text-transform: uppercase;
+}
 
 #logo {
 	width: 25vw;
