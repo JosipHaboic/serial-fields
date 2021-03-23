@@ -33,7 +33,7 @@ button, .btn {
 	background: var(--color-0-3);
 	color: var(--light);
 	transition: all 1s;
-	padding: var(--pd);
+	padding: var(--sm) var(--md);
 	border-radius: 4px;
 }
 
