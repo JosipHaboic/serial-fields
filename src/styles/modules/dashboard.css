@@ -1,32 +1,8 @@
 @import "../palette.css";
+@import "../vars.css";
+@import "./ports.css";
 
 
 .dashboard {
 	display: flex;
-}
-
-.port-list {
-	display: flex;
-	flex-direction: row;
-}
-
-.port-list-item {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	color: var(--color-0-1);
-}
-
-.port-status {
-	font-size: 2rem;
-	width: 2vw;
-	height: 2vh;
-}
-
-.port--open {
-	background-color: var(--color-1-0);
-}
-
-.port--closed {
-	background-color: var(--color-3-0);
 }
