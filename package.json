@@ -26,6 +26,7 @@
     "circular-buffer": "^1.0.3",
     "core-js": "^3.6.5",
     "graphql": "^15.5.0",
+    "graphql-tools": "^6.2.6",
     "register-service-worker": "^1.7.1",
     "serialport": "^9.0.6",
     "vue": "^2.6.11",
