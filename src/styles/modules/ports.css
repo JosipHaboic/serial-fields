@@ -2,20 +2,23 @@
 @import "../palette.css";
 
 .port-list-container {
+	display: flex;
 	padding: var(--sm);
-	border-color: var(--color-0-3);
+	width: 75vw;
 }
 
 .port-list-title {
 	text-transform: lowercase;
 	color: var(--light);
+	font-size: var(--lg);
 }
 
 .port-list {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
+	justify-content: center;
 	padding: 0 var(--sm);
-	height: 50vh;
+	width: 100%;
 }
 
 .port-list-item {
@@ -23,10 +26,15 @@
 	flex-direction: row;
 	align-items: center;
 	color: var(--color-0-1);
+	border: 1px solid var(--color-0-3);
+}
+
+.port-list-item .link {
+	font-size: var(--lg);
 }
 
 .port-status {
-	font-size: 2rem;
+	font-size: 4rem;
 	width: 2vw;
 	height: 2vh;
 }
