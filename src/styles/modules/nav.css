@@ -6,7 +6,7 @@
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
-	height: 5vh;
+	height: var(--top-nav-height);
 	width: 100%;
 }
 
@@ -54,7 +54,8 @@
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
-	height: 95vh;
+	width: var(--side-nav-width);
+	height: calc(100vh - var(--side-nav-width));
 	padding: 0 var(--sm);
 	border-right: 1px dashed var(--color-0-3);
 }
