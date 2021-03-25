@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from 'vue';
 import PortStatus from '../port/PortStatus.vue';
 
 export default Vue.extend({
@@ -25,13 +25,13 @@ export default Vue.extend({
 	props: {
 		ports: {
 			type: Array,
-			required: false
-		}
+			required: false,
+		},
 	},
 	methods: {
 		route(path: string) {
 			return `/dashboard/serial-ports/${path}`;
 		},
 	},
-})
+});
 </script>

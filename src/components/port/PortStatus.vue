@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from 'vue';
 import gql from 'graphql-tag';
 
 export default Vue.extend({
@@ -11,7 +11,7 @@ export default Vue.extend({
 		path: {
 			type: String,
 			required: true,
-		}
+		},
 	},
 	data: () => ({
 		listOpenPorts: new Array<string>(),
@@ -32,6 +32,6 @@ export default Vue.extend({
 			return 'port--closed';
 			// return [...this.listOpenPorts].find((item) => item === portPath)  ? 'port--open' : 'port--closed';
 		},
-	}
-})
+	},
+});
 </script>
