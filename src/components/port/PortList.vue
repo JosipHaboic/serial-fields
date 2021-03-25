@@ -1,17 +1,15 @@
 <template>
-  <div class="port-list-container">
-    <div class="port-list" v-if="ports.length > 0">
-      <div v-for="port in ports" :key="port.path" class="port-list-item">
-        <router-link class="link" :to="route(port.path)">
-          {{ port.path }}
-        </router-link>
-      	<port-status :path="port.path"></port-status>
-      </div>
-    </div>
-    <div v-else>
-      <p class="warning message is-centered">No serial ports detected</p>
-    </div>
+<div class="port-list" v-if="ports.length > 0">
+  <div v-for="port in ports" :key="port.path" class="port-list-item">
+    <router-link class="link" :to="route(port.path)">
+      {{ port.path }}
+    </router-link>
+  	<port-status :path="port.path"></port-status>
   </div>
+</div>
+<div v-else>
+  <p class="warning message is-centered">No serial ports detected</p>
+</div>
 </template>
 
 <script lang="ts">
