@@ -119,4 +119,11 @@
 	#nav-icon {
 		display: initial;
 	}
+
+	#side-nav {
+		width: 100%;
+		height: 100%;
+		padding: var(--sm);
+		border: none;
+	}
 }

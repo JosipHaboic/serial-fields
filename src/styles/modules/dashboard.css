@@ -5,4 +5,22 @@
 
 .dashboard {
 	display: flex;
+	flex-direction: row;
+}
+
+.dashboard .dashboard-view {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@media screen and (max-width: 425px) {
+	.dashboard {
+		flex-direction: column;
+	}
+
+	.dashboard .dashboard-view {
+		width: 100%;
+	}
+
 }
