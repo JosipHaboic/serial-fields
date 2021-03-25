@@ -8,6 +8,8 @@
 	align-items: center;
 	height: var(--top-nav-height);
 	width: 100%;
+	background: var(--color-0-4);
+	box-shadow: 0 -4px 4px 2px var(--color-0-2);
 }
 
 #top-nav {
