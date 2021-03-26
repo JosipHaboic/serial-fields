@@ -5,7 +5,7 @@ import router from './router';
 import store from './store';
 import VueApollo from 'vue-apollo';
 import { apolloClient } from './graphql/apollo';
-import './styles/theme.css';
+import './styles/index.css';
 
 
 Vue.config.productionTip = false;

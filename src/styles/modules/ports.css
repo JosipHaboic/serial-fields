@@ -1,19 +1,10 @@
-@import "../vars.css";
-@import "../palette.css";
-
-
 .port-list {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	justify-content: center;
 	padding: 0 var(--sm);
 	width: 100%;
-}
-
-.port-list-title {
-	text-transform: lowercase;
-	color: var(--light);
-	font-size: var(--lg);
 }
 
 .port-list-item {
@@ -21,25 +12,42 @@
 	flex-direction: row;
 	align-items: center;
 	color: var(--color-0-1);
-	border: 1px solid var(--color-0-3);
+	min-width: 33vw;
+	height: 33vh;
+	margin: var(--sm);
+	background-color: var(--color-0-4);
+	border: var(--xsm) solid transparent;
 }
 
 .port-list-item .link {
-	font-size: var(--lg);
+	font-size: var(--xlg);
 }
 
 .port-status {
-	font-size: 4rem;
-	width: 2vw;
-	height: 2vh;
+	width: 4vw;
+	height: 4vh;
 }
 
 .port--open {
-	background-color: var(--color-1-0);
-	transition: all 1s;
+	background: var(--color-1-0);
+	transition: background 1s;
 }
 
 .port--closed {
-	background-color: var(--color-3-0);
-	transition: all 1s;
+	background: var(--color-3-0);
+	transition: background 1s;
+}
+
+@media screen and (max-width: 425px) {
+	.port-list {
+		flex-direction: column;
+		width: 95vw;
+		padding: var(--xsm);
+		background: var(--dark);
+	}
+
+	.port-list-item {
+		width: 100%;
+		margin: var(--xsm) 0;
+	}
 }

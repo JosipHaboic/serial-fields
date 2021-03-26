@@ -1,9 +1,9 @@
 @import './normalize.css';
+@import './root.css';
 @import './html-overwrite.css';
 @import './layout.css';
 @import './modules/nav.css';
 @import './modules/dashboard.css';
-@import './vars.css';
 
 .warning {
 	color: var(--color-3-0);
