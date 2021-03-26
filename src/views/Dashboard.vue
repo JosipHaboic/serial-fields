@@ -9,11 +9,11 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import SideNav from '../components/navigation/SideNav.vue';
+// import SideNav from '../components/navigation/SideNav.vue';
 
 export default Vue.extend({
 	components: {
-		sidenav: SideNav,
+		// sidenav: SideNav,
 	},
 	data: () => ({
 		sidenavLinks: [
