@@ -1,6 +1,6 @@
 <template>
 	<div class="container">
-		<port-list :ports="listPorts"/>
+		<port-list :ports="testPortList"/>
 		<router-view></router-view>
 	</div>
 </template>
