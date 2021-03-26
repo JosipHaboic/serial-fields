@@ -1,6 +1,6 @@
 <template>
 	<div class="dashboard">
-		<sidenav :links="sidenavLinks" />
+		<!-- <sidenav :links="sidenavLinks" /> -->
 		<div class="dashboard-view">
 			<router-view></router-view>
 		</div>
