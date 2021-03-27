@@ -1,6 +1,8 @@
 <template>
-	<div class="icon-bar icon-bar-vertical">
-		<component :is="iconRegister[name]" v-for="name in icons" :key="name"></component>
+	<div class="icon-bar icon-bar--vertical">
+		<router-link v-for="iconLink in iconLinks" :key="iconLink.href" :to="iconLink.href">
+			<component :is="iconRegister[iconLink.icon]" :classes="iconLink.classes"></component>
+		</router-link>
 	</div>
 </template>
 
@@ -13,7 +15,7 @@ export default Vue.extend({
 		...icons,
 	},
 	props: {
-		icons: {
+		iconLinks: {
 			type: Array,
 		},
 	},
