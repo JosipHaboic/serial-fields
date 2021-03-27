@@ -8,12 +8,10 @@
 
 html {
 	font-family: 'Oxanium';
-	padding: 0;
-	margin: 0;
-	background-image: linear-gradient(to bottom right, var(--color-0-4), var(--dark));
 }
 
 body {
+	background-image: linear-gradient(to bottom right, var(--color-0-4), var(--dark));
 	font-family: 'Oxanium';
 	padding: 0;
 	margin: 0;
