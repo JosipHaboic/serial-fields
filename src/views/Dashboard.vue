@@ -35,9 +35,9 @@ export default Vue.extend({
 	},
 	data: () => ({
 		iconBarLinks: [
-			{ href: '/dashboard/serial-ports', 	 icon: 'usb-interface', classes: 'icon',},
-			{ href: '/dashboard/wi-fi',        	 icon: 'wi-fi', classes: 'icon',},
-			{ href: '/dashboard/settings',       icon: 'settings', classes: 'icon',},
+			{ href: '/dashboard/serial-ports', 	 icon: 'usb-interface', classes: 'icon'},
+			{ href: '/dashboard/wi-fi',        	 icon: 'wi-fi', classes: 'icon'},
+			{ href: '/dashboard/settings',       icon: 'settings', classes: 'icon'},
 		],
 	}),
 });
