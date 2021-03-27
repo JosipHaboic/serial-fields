@@ -1,7 +1,7 @@
 <template>
 	<div class="dashboard">
 		<icon-bar :iconLinks="iconBarLinks" />
-		<div class="dashboard-status">
+		<!-- <div class="dashboard-status">
 			<h2>Status</h2>
 			<a>4 Serial ports detected</a>
 			<a>3 Serial ports connected</a>
@@ -20,7 +20,7 @@
 			<div>WiFi</div>
 			<div>Data</div>
 			<div>Settings</div>
-		</div>
+		</div> -->
 		<!-- <router-view></router-view> -->
 	</div>
 </template>
@@ -35,9 +35,9 @@ export default Vue.extend({
 	},
 	data: () => ({
 		iconBarLinks: [
-			{ href: '/dashboard/serial-ports', 	 icon: 'usb-interface', classes: 'menu-icon',},
-			{ href: '/dashboard/wi-fi',        	 icon: 'wi-fi', classes: 'menu-icon',},
-			{ href: '/dashboard/settings',       icon: 'settings', classes: 'menu-icon',},
+			{ href: '/dashboard/serial-ports', 	 icon: 'usb-interface', classes: 'icon',},
+			{ href: '/dashboard/wi-fi',        	 icon: 'wi-fi', classes: 'icon',},
+			{ href: '/dashboard/settings',       icon: 'settings', classes: 'icon',},
 		],
 	}),
 });
