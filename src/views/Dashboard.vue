@@ -1,27 +1,24 @@
 <template>
 	<div class="dashboard">
 		<icon-bar :iconLinks="iconBarLinks" />
-		<!-- <div class="dashboard-status">
-			<h2>Status</h2>
-			<a>4 Serial ports detected</a>
-			<a>3 Serial ports connected</a>
-			<a>1 Serial ports disconnected</a>
+
+		<div class="dashboard-view">
+			<section class="serial-ports-summary">
+				<h4>Ports</h4>
+				<hr />
+				<p>4 Serial Ports detected</p>
+				<p>1 Serial Ports open</p>
+				<p>3 Serial Ports closed</p>
+			</section>
+			<section class="wifi-ports-summary">
+				<h4>Ports</h4>
+				<hr />
+				<p>2 WiFi Ports detected</p>
+				<p>1 WiFi Ports open</p>
+				<p>1 WiFi Ports closed</p>
+			</section>
 		</div>
-		<div class="dashboard-notifications">
-			<h2>Notifications</h2>
-			<p>GraphQL Backend Server Started!</p>
-			<p>Error: Parsing JSON data</p>
-			<p>Error: Parsing JSON data</p>
-			<p>Info: Parsing JSON data</p>
-		</div>
-		<div class="dashboard-options">
-			<h2>Options</h2>
-			<div>Ports</div>
-			<div>WiFi</div>
-			<div>Data</div>
-			<div>Settings</div>
-		</div> -->
-		<!-- <router-view></router-view> -->
+		<router-view></router-view>
 	</div>
 </template>
 

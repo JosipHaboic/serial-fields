@@ -51,7 +51,7 @@
 
 .icon-bar--vertical {
 	flex-direction: column;
-	width: 64px;
+	width: 5vw;
 	border-right: 1px solid var(--color-0-3-transparent);
 	height: calc(100vh - var(--top-nav-height));
 }
@@ -109,7 +109,7 @@
 
 	.icon-bar--vertical {
 		flex-direction: column;
-		width: 64px;
+		width: 12vw;
 		border-right: 1px solid var(--color-0-3-transparent);
 		height: calc(100vh - var(--top-nav-height));
 	}

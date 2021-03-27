@@ -5,20 +5,26 @@
 	  display: flex;
 }
 
-.dashboard .dashboard-view {
+.dashboard-view {
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	/* justify-content: center; */
+	/* align-items: center; */
 }
 
 @media screen and (max-width: 425px) {
-	.dashboard {
-		  /* display: grid; */
-		  /* grid-column-gap: 50px; */
+	.dashboard-view {
+		width: 100%;
+		flex-direction: column;
 	}
 
-	.dashboard .dashboard-view {
+	.dashboard-view section {
 		width: 100%;
+		padding: 0 var(--sm);
+		margin: var(--xxsm) 0;
+		text-align: left;
+		justify-content: flex-start;
+		align-items: flex-start;
+		background: var(--dark);
 	}
 
 }
