@@ -1,18 +1,3 @@
-#top-nav-container {
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-	height: var(--top-nav-height);
-	width: 100%;
-	background: var(--color-0-4);
-	border-bottom: 1px solid var(--color-0-3);
-}
-
-#top-nav {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
-}
 
 .link {
 	font-size: var(--md);
@@ -35,6 +20,17 @@
 	-ms-transition: color 1s ease;
 }
 
+#top-nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+	width: 100%;
+	height: var(--top-nav-height);
+	background: var(--color-0-4);
+	border-bottom: 1px solid var(--color-0-3-transparent);
+}
+
 #top-nav .router-link-active {
 	color: var(--color-0-0);
 }
@@ -53,27 +49,24 @@
 
 .icon-bar--vertical {
 	flex-direction: column;
-	min-width: 64px;
-	border-right: 1px solid var(--color-0-3);
+	width: 64px;
+	border-right: 1px solid var(--color-0-3-transparent);
 	height: calc(100vh - var(--top-nav-height));
 }
 
 .icon {
-	height: 5vw;
+	width: 2vw;
+	height: 2vw;
+	margin: var(--sm);
 	stroke: var(--color-0-0);
 	fill:   var(--color-0-0);
 }
 
-.menu-icon {
-	height: 2vw;
-	margin: var(--sm) 0;
-	stroke: var(--color-0-0);
-	fill: var(--color-0-0);
-}
-
-
 @media screen and (max-width: 425px) {
-	#top-nav-container {
+	#top-nav {
+		flex-direction: column;
+		align-items: center;
+		font-size: 0.75rem;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -85,14 +78,13 @@
 		left: 0;
 	}
 
-	#top-nav {
-		flex-direction: column;
-		align-items: center;
-		font-size: 0.75rem;
+	.top-nav--closed {
+		display: none;
+		height: 0px !important;
 	}
 
-	.top-nav--closed {
-		height: 0px !important;
+	.top-nav--closed a {
+		display: none;
 	}
 
 	#top-nav a {
