@@ -5,7 +5,7 @@
 	height: var(--top-nav-height);
 	width: 100%;
 	background: var(--color-0-4);
-	box-shadow: 0 -4px 4px 2px var(--color-0-2);
+	border-bottom: 1px solid var(--color-0-3);
 }
 
 #top-nav {
@@ -47,34 +47,31 @@
 	display: none;
 }
 
-#side-nav {
+.icon-bar {
 	display: flex;
+}
+
+.icon-bar--vertical {
 	flex-direction: column;
-	justify-content: flex-start;
-	align-items: flex-start;
-	width: var(--side-nav-width);
-	height: calc(100vh - (var(--top-nav-height) + var(--sm)));
-	margin: var(--sm) 0 0 0;
+	min-width: 64px;
+	height: 100%;
+	border-right: 1px solid var(--color-0-3);
+	height: calc(100vh - var(--top-nav-height));
 }
 
-#side-nav .link {
-	color: var(--light);
-	padding: var(--xsm) 0;
-	font-size: var(--sm);
-	cursor: pointer;
-	transition: color 1s ease;
-	-webkit-transition: color 1s ease;
-	-moz-transition: color 1s ease;
-	-o-transition: color 1s ease;
-	-ms-transition: color 1s ease;
+.icon {
+	width:  5vw;
+	height: 5vw;
+	stroke: var(--color-0-0);
+	fill:   var(--color-0-0);
 }
 
-#side-nav .router-link-active {
-	color: var(--color-0-0);
-}
-
-#side-nav .router-link-exact-active {
-	color: var(--color-0-0);
+.menu-icon {
+	width:  2vw;
+	height: 2vw;
+	margin: var(--sm) 0;
+	stroke: var(--color-0-0);
+	fill: var(--color-0-0);
 }
 
 
@@ -112,12 +109,5 @@
 
 	#nav-icon {
 		display: initial;
-	}
-
-	#side-nav {
-		width: 100%;
-		height: 100%;
-		padding: var(--sm);
-		border: none;
 	}
 }

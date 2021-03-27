@@ -1,27 +1,43 @@
 <template>
 	<div class="dashboard">
-		<!-- <sidenav :links="sidenavLinks" /> -->
-		<div class="dashboard-view">
-			<router-view></router-view>
+		<icon-bar :iconLinks="iconBarLinks" />
+		<div class="dashboard-status">
+			<h2>Status</h2>
+			<a>4 Serial ports detected</a>
+			<a>3 Serial ports connected</a>
+			<a>1 Serial ports disconnected</a>
 		</div>
+		<div class="dashboard-notifications">
+			<h2>Notifications</h2>
+			<p>GraphQL Backend Server Started!</p>
+			<p>Error: Parsing JSON data</p>
+			<p>Error: Parsing JSON data</p>
+			<p>Info: Parsing JSON data</p>
+		</div>
+		<div class="dashboard-options">
+			<h2>Options</h2>
+			<div>Ports</div>
+			<div>WiFi</div>
+			<div>Data</div>
+			<div>Settings</div>
+		</div>
+		<!-- <router-view></router-view> -->
 	</div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-// import SideNav from '../components/navigation/SideNav.vue';
+import IconBar from '../components/IconBar.vue';
 
 export default Vue.extend({
 	components: {
-		// sidenav: SideNav,
+		'icon-bar': IconBar,
 	},
 	data: () => ({
-		sidenavLinks: [
-			{ class: 'link', href: '/dashboard/serial-ports', text: 'Serial Ports'},
-			{ class: 'link', href: '/dashboard/wi-fi', text: 'WiFi'},
-			{ class: 'link', href: '/dashboard/graphs', text: 'Graphs'},
-			{ class: 'link', href: '/dashboard/data', text: 'Data'},
-			{ class: 'link', href: '/dashboard/settings', text: 'Settings'},
+		iconBarLinks: [
+			{ href: '/dashboard/serial-ports', 	 icon: 'usb-interface', classes: 'menu-icon',},
+			{ href: '/dashboard/wi-fi',        	 icon: 'wi-fi', classes: 'menu-icon',},
+			{ href: '/dashboard/settings',       icon: 'settings', classes: 'menu-icon',},
 		],
 	}),
 });
