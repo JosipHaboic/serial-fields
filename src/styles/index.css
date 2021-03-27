@@ -73,13 +73,6 @@ button:active {
 	box-shadow: 0 10px 10px -15px var(--dark);
 }
 
-.sidebar-icon {
-	width: 64px;
-	height: 64px;
-	stroke: var(--color-0-0) !important;
-	fill: var(--color-0-0) !important;
-}
-
 @media screen and (max-width: 425px) {
 	#logo {
 		width: 25vw;
