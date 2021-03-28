@@ -7,8 +7,10 @@
 
 .dashboard-view {
 	display: flex;
-	/* justify-content: center; */
-	/* align-items: center; */
+}
+
+.dashboard-view section {
+	width: 100%;
 }
 
 @media screen and (max-width: 425px) {

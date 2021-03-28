@@ -1,5 +1,5 @@
 <template>
-	<div class="container">
+	<div>
 		<port-list :ports="testPortList"/>
 		<router-view></router-view>
 	</div>
