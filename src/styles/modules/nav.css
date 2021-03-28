@@ -51,7 +51,7 @@
 
 .icon-bar--vertical {
 	flex-direction: column;
-	width: 5vw;
+	padding: 0 var(--xsm);
 	border-right: 1px solid var(--color-0-3-transparent);
 	height: calc(100vh - var(--top-nav-height));
 }
@@ -60,8 +60,15 @@
 	width: 2vw;
 	height: 2vw;
 	margin: var(--sm);
+	stroke: var(--light);
+	fill:   var(--light);
+	transition: all 1s;
+}
+
+.router-link-exact-active .icon {
 	stroke: var(--color-0-0);
-	fill:   var(--color-0-0);
+	fill: var(--color-0-0);
+	transition: all 1s;
 }
 
 @media screen and (max-width: 425px) {
@@ -109,7 +116,7 @@
 
 	.icon-bar--vertical {
 		flex-direction: column;
-		width: 12vw;
+		min-width: 12vw;
 		border-right: 1px solid var(--color-0-3-transparent);
 		height: calc(100vh - var(--top-nav-height));
 	}
