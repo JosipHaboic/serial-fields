@@ -1,41 +1,72 @@
 <template>
-<table>
-	<tr>
-		<th>pnpId</th>
-		<th>productId</th>
-		<th>locationId</th>
-		<th>vendorId</th>
-		<th>serialNumber</th>
-		<th>manufacturer</th>
-	</tr>
-	<tr>
-		<td>{{ pnpId }}</td>
-		<td>{{ productId }}</td>
-		<td>{{ locationId }}</td>
-		<td>{{ vendorId }}</td>
-		<td>{{ serialNumber }}</td>
-		<td>{{ manufacturer }}</td>
-	</tr>
-</table>
+<div class="serial-port-info">
+	<table>
+		<tr>
+			<th>pnpId</th>
+			<th>productId</th>
+			<th>locationId</th>
+			<th>vendorId</th>
+			<th>serialNumber</th>
+			<th>manufacturer</th>
+		</tr>
+		<tr>
+			<td>{{ portInfo.pnpId }}</td>
+			<td>{{ portInfo.productId }}</td>
+			<td>{{ portInfo.locationId }}</td>
+			<td>{{ portInfo.vendorId }}</td>
+			<td>{{ portInfo.serialNumber }}</td>
+			<td>{{ portInfo.manufacturer }}</td>
+		</tr>
+	</table>
+</div>
 </template>
 
-<script>
+<script lang="ts">
 import Vue from 'vue';
 import gql from 'graphql-tag';
 
 export default Vue.extend({
 	data: () => ({
-		portInfo: {},
+		listPorts: new Array<any>(),
 	}),
 	apollo: {
-		portInfo: {
-			query: gql`query portInfo($path: String!) { portInfo(path: $path) {pnpId, productId, manufacturer, serialNumber, locationId, vendorId}}`,
-			variables: {
-				path: $route.path,
-			}
-		}
-	}
+		listPorts: {
+			query: gql`query { listPorts {path, pnpId, productId, locationId, vendorId, serialNumber, manufacturer}}`,
+		},
+	},
+	computed: {
+		portInfo() {
+			return [...this.listPorts].filter((item) => {
+				return item.path === this.$route.params.path;
+			})[0];
+		},
+	},
 });
 </script>
 
-query { listPorts {path, pnpId, productId, manufacturer, serialNumber, locationId, vendorId}}
+<style scoped>
+	table, th, td {
+		padding: var(--lg);
+	}
+
+	table {
+		width: 95vw;
+		/* border: 1px solid var(--color-0-3); */
+	}
+
+	td {
+		background: var(--dark);
+	}
+
+	tr {
+		border-bottom: 1px solid var(--color-0-3);
+	}
+
+	.serial-port-info {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+	}
+</style>

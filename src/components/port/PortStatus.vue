@@ -1,5 +1,8 @@
 <template>
-	<div class="port-status" v-bind:class="portStatus(path)"></div>
+	<div
+		class="port-status"
+		v-bind:class="portStatus"
+		@click="togglePort()"></div>
 </template>
 
 <script lang="ts">
@@ -22,15 +25,36 @@ export default Vue.extend({
 			pollInterval: 250,
 		},
 	},
-	methods: {
-		portStatus(portPath: string) {
+	computed: {
+		portStatus() {
 			for (const item of this.listOpenPorts) {
-				if (item === portPath) {
+				if (item === this.$props.path) {
 					return 'port--open';
 				}
 			}
 			return 'port--closed';
-			// return [...this.listOpenPorts].find((item) => item === portPath)  ? 'port--open' : 'port--closed';
+		},
+	},
+	methods: {
+		togglePort() {
+			if (this.portStatus === 'port--open') {
+				this.$apollo.mutate({
+					mutation: gql`mutation ($path: String!) {closePort(path: $path)}`,
+					variables: {
+						path: this.$props.path,
+					},
+				});
+			} else {
+				this.$apollo.mutate({
+					mutation: gql`mutation ($path: String!)
+					{
+						openPort(path: $path, openOptions: {baudRate: 9600}, delimiter: "\r\n")
+					}`,
+					variables: {
+						path: this.$props.path,
+					},
+				});
+			}
 		},
 	},
 });

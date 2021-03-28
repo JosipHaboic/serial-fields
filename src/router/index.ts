@@ -21,28 +21,16 @@ const routes: RouteConfig[] = [
     component: () => import(/* webpackChunkName: "dashboard" */ '../views/Dashboard.vue'),
     children: [
       {
-        path: '/',
-        name: 'DashboardHome',
-        component: () => import(/* webpackChunkName: "dashboard-home" */ '../views/dashboard/Home.vue'),
-      },
-      {
         path: 'serial-ports',
         name: 'SerialPorts',
         component: () => {
           return import(/* webpackChunkName: "serial-ports" */ '../views/dashboard/serial-ports/SerialPorts.vue');
         },
-        children: [
-          {
-            path: '/',
-            name: 'SerialPortsHome',
-            component: () => import(/* webpackChunkName: "serial-ports-home" */ '../views/dashboard/serial-ports/Home.vue'),
-          },
-          {
-            path: ':path',
-            name: 'SerialPort',
-            component: () => import(/* webpackChunkName: "serial-port" */ '../views/dashboard/serial-ports/SerialPort.vue'),
-          },
-        ],
+      },
+      {
+        path: 'serial-ports/:path',
+        name: 'SerialPort',
+        component: () => import(/* webpackChunkName: "serial-port" */ '../views/dashboard/serial-ports/SerialPort.vue'),
       },
     ],
   },

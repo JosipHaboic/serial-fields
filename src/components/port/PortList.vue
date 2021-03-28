@@ -7,10 +7,6 @@
     	</router-link>
   		<port-status :path="port.path"></port-status>
 	</div>
-
-	<div class="card-body">
-		<p>Test</p>
-	</div>
   </div>
 </div>
 <div v-else>
@@ -21,10 +17,12 @@
 <script lang="ts">
 import Vue from 'vue';
 import PortStatus from '../port/PortStatus.vue';
+import PortSwitch from '../port/PortSwitch.vue';
 
 export default Vue.extend({
 	components: {
 		'port-status': PortStatus,
+		'port-switch': PortSwitch,
 	},
 	props: {
 		ports: {
