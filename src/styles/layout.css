@@ -108,8 +108,18 @@ div[class^="col-"] {
 	align-items: center;
 }
 
+/* Align */
+.s-btw {
+	justify-content: space-between;
+}
+
 
 /* Margins */
-.mt-5 {
-	margin-top: 5vh;
+.m-xy-sm {
+	margin: var(--sm);
+}
+
+/* Padding */
+.p-xy-sm {
+	padding: var(--sm);
 }

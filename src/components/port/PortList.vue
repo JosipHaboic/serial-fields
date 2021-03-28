@@ -1,10 +1,16 @@
 <template>
 <div class="port-list" v-if="ports.length > 0">
-  <div v-for="port in ports" :key="port.path" class="port-list-item">
-    <router-link class="link" :to="route(port.path)">
-      {{ port.path }}
-    </router-link>
-  	<port-status :path="port.path"></port-status>
+  <div v-for="port in ports" :key="port.path" class="card m-xy-sm">
+	<div class="card-header s-btw p-xy-sm">
+    	<router-link class="link" :to="route(port.path)">
+    	  {{ port.path }}
+    	</router-link>
+  		<port-status :path="port.path"></port-status>
+	</div>
+
+	<div class="card-body">
+		<p>Test</p>
+	</div>
   </div>
 </div>
 <div v-else>
