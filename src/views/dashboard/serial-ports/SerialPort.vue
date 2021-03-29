@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="serial-port">
 	<table>
 		<tr>
 			<th>pnpId</th>
@@ -19,16 +19,13 @@
 		</tr>
 	</table>
 
-	<fieldset>
+	<fieldset class="mt-5">
 		<legend>Open Port</legend>
 
 		<label for="baud-rate">Baud Rate</label>
 		<select v-model="openPortOptions.baudRate">
 			<option v-for="baudRate in baudRates" :key="baudRate">{{ baudRate }}</option>
 		</select>
-
-		<!-- <label for="auto-open">Auto Open</label> -->
-		<!-- <input type="checkbox" v-model="openPortOptions.autoOpen" /> -->
 
 		<label for="data-bits">Data Bits</label>
 		<select v-model="openPortOptions.dataBits">
@@ -47,22 +44,23 @@
 		</select>
 
 		<label for="delimiter">Delimiter</label>
-		<input type="text" v-model="delimiter" placeholder="\r\n"/>
+		<input type="text" v-model="delimiter" value="\r\n" />
 
-		<button>Open Port</button>
+		<button v-if="isPortOpen" @click="closePort">Disconnect</button>
+		<button v-else @click="openPort">Connect</button>
 	</fieldset>
 
 </div>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue';
 import gql from 'graphql-tag';
-import { OpenOptions, BAUD_RATES } from '@/models';
+import { BAUD_RATES } from '@/models';
 
 export default Vue.extend({
 	data: () => ({
-		listPorts: new Array<any>(),
+		listPorts: [],
 		openPortOptions: {
 			autoOpen: true,
 			baudRate: 9600,
@@ -76,13 +74,23 @@ export default Vue.extend({
 			xon: false,
 			dataBits: 8,
 			highWaterMark: 64 * 1024,
-		} as OpenOptions,
+		},
 		baudRates: BAUD_RATES,
 		delimiter: '\r\n',
+		isPortOpen: false,
 	}),
 	apollo: {
 		listPorts: {
 			query: gql`query { listPorts {path, pnpId, productId, locationId, vendorId, serialNumber, manufacturer}}`,
+		},
+		isPortOpen: {
+			query: gql`query isPortOpen($path: String!) { isPortOpen(path: $path) }`,
+			variables() {
+				return {
+					path: this.$route.params.path,
+				};
+			},
+			pollInterval: 250,
 		},
 	},
 	computed: {
@@ -91,37 +99,40 @@ export default Vue.extend({
 				return item.path === this.$route.params.path;
 			})[0];
 		},
+		buttonText() {
+			if (this.isPortOpen === true) {
+				return 'Close Port';
+			}
+			return 'Open Port';
+		},
+	},
+	methods: {
+		openPort() {
+			this.$apollo.mutate({
+				mutation: gql`mutation ($path: String!, $openOptions: OpenOptions, $delimiter: String!) {
+					openPort(path: $path, openOptions: $openOptions, delimiter: $delimiter)
+				}`,
+				variables: {
+					// return {
+						path: this.$route.params.path,
+						openOptions: this.openPortOptions,
+						delimiter: this.delimiter,
+					// };
+				},
+			});
+		},
+		closePort() {
+			this.$apollo.mutate({
+				mutation: gql`mutation ($path: String!) {
+					closePort(path: $path)
+				}`,
+				variables: {
+					// return {
+						path: this.$route.params.path,
+					// };
+				},
+			});
+		},
 	},
 });
 </script>
-
-<style scoped>
-	table, th, td {
-		padding: var(--lg);
-	}
-
-	table {
-		width: 95vw;
-		/* border: 1px solid var(--color-0-3); */
-	}
-
-	td {
-		background: var(--dark);
-	}
-
-	tr {
-		border-bottom: 1px solid var(--color-0-3);
-	}
-
-	fieldset {
-		display: flex;
-		flex-direction: column;
-		width: 320px;
-		padding: var(--sm);
-	}
-
-	fieldset * {
-		padding: var(--xsm);
-		margin: var(--xsm) 0;
-	}
-</style>

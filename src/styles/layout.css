@@ -115,6 +115,9 @@ div[class^="col-"] {
 
 
 /* Margins */
+.mt-5 {
+	margin: 5vh 0 0 0;
+}
 .m-xy-sm {
 	margin: var(--sm);
 }
