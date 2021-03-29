@@ -1,8 +1,5 @@
 <template>
-	<div
-		class="port-status"
-		v-bind:class="portStatus"
-		@click="togglePort()"></div>
+	<div class="port-status" v-bind:class="portStatus"></div>
 </template>
 
 <script lang="ts">
@@ -33,28 +30,6 @@ export default Vue.extend({
 				}
 			}
 			return 'port--closed';
-		},
-	},
-	methods: {
-		togglePort() {
-			if (this.portStatus === 'port--open') {
-				this.$apollo.mutate({
-					mutation: gql`mutation ($path: String!) {closePort(path: $path)}`,
-					variables: {
-						path: this.$props.path,
-					},
-				});
-			} else {
-				this.$apollo.mutate({
-					mutation: gql`mutation ($path: String!)
-					{
-						openPort(path: $path, openOptions: {baudRate: 9600}, delimiter: "\r\n")
-					}`,
-					variables: {
-						path: this.$props.path,
-					},
-				});
-			}
 		},
 	},
 });
