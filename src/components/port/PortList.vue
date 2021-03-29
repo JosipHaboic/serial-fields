@@ -5,7 +5,7 @@
     	<router-link class="link" :to="route(port.path)">
     	  {{ port.path }}
     	</router-link>
-  		<port-status :path="port.path"></port-status>
+  		<port-status :path="port.path" />
 	</div>
   </div>
 </div>

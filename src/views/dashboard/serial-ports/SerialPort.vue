@@ -1,5 +1,5 @@
 <template>
-<div class="serial-port-info">
+<div>
 	<table>
 		<tr>
 			<th>pnpId</th>
@@ -19,7 +19,7 @@
 		</tr>
 	</table>
 
-	<fieldset class="open-port-form">
+	<fieldset>
 		<legend>Open Port</legend>
 
 		<label for="baud-rate">Baud Rate</label>
@@ -31,7 +31,7 @@
 		<!-- <input type="checkbox" v-model="openPortOptions.autoOpen" /> -->
 
 		<label for="data-bits">Data Bits</label>
-		<select v-mode="openPortOptions.dataBits">
+		<select v-model="openPortOptions.dataBits">
 			<option>5</option>
 			<option>6</option>
 			<option>7</option>
@@ -39,12 +39,15 @@
 			<option>9</option>
 		</select>
 
-		<label for="stop-bits">Data Bits</label>
-		<select v-mode="openPortOptions.stopBits">
+		<label for="stop-bits">Stop Bits</label>
+		<select v-model="openPortOptions.stopBits">
 			<option selected>1</option>
 			<option>2</option>
 			<option>3</option>
 		</select>
+
+		<label for="delimiter">Delimiter</label>
+		<input type="text" v-model="delimiter" placeholder="\r\n"/>
 
 		<button>Open Port</button>
 	</fieldset>
@@ -75,6 +78,7 @@ export default Vue.extend({
 			highWaterMark: 64 * 1024,
 		} as OpenOptions,
 		baudRates: BAUD_RATES,
+		delimiter: '\r\n',
 	}),
 	apollo: {
 		listPorts: {
@@ -109,12 +113,15 @@ export default Vue.extend({
 		border-bottom: 1px solid var(--color-0-3);
 	}
 
-	.serial-port-info {
-		width: 100%;
-		height: 100%;
+	fieldset {
 		display: flex;
 		flex-direction: column;
-		justify-content: flex-start;
-		align-items: flex-start;
+		width: 320px;
+		padding: var(--sm);
+	}
+
+	fieldset * {
+		padding: var(--xsm);
+		margin: var(--xsm) 0;
 	}
 </style>
