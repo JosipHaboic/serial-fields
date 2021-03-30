@@ -10,8 +10,8 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import TopNavigation from './components/navigation/TopNavigation.vue';
-import NavIcon from './components/navigation/NavIcon.vue';
+import TopNavigation from '@/components/navigation/TopNavigation.vue';
+import NavIcon from '@/components/navigation/NavIcon.vue';
 
 export default Vue.extend({
   components: {

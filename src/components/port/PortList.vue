@@ -16,13 +16,11 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import PortStatus from '../port/PortStatus.vue';
-import PortSwitch from '../port/PortSwitch.vue';
+import PortStatus from '@/components/port/PortStatus.vue';
 
 export default Vue.extend({
 	components: {
 		'port-status': PortStatus,
-		'port-switch': PortSwitch,
 	},
 	props: {
 		ports: {

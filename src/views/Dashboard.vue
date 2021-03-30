@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import IconBar from '../components/IconBar.vue';
+import IconBar from '@/components/navigation/IconBar.vue';
 
 export default Vue.extend({
 	components: {

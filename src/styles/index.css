@@ -5,18 +5,6 @@
 @import './modules/nav.css';
 @import './modules/dashboard.css';
 
-.warning {
-	color: var(--color-3-0);
-}
-
-.info {
-	color: var(--color-0-0);
-}
-
-.message {
-	font-size: 0.75rem;
-	text-transform: uppercase;
-}
 
 #logo {
 	width: 25vw;
@@ -73,22 +61,6 @@ button:active {
 	box-shadow: 0 10px 10px -15px var(--dark);
 }
 
-.card {
-	display: flex;
-	flex-direction: column;
-	width: 25vw;
-	background-color: var(--dark);
-	border: 1px solid var(--color-0-3);
-}
-
-.card-header {
-	display: flex;
-	flex-direction: row;
-}
-
-.card-header * {
-	font-size: var(--lg);
-}
 
 @media screen and (max-width: 425px) {
 	#logo {

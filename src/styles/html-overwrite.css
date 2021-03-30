@@ -38,39 +38,25 @@ option {
 input {
 	color: var(--dark);
 	border: none;
-}
-
-table,
-th,
-td {
-	padding: var(--lg);
-	font-size: var(--md);
-}
-
-td {
-	background: var(--dark);
-}
-
-tr {
-	border-bottom: 1px solid var(--color-0-3);
+	background: var(--light);
 }
 
 label {
-	color: var(--color-0-2);
+	color: var(--color-2-0);
 	text-align: left;
+	font-size: var(--md);
 }
 
 fieldset {
 	display: flex;
 	flex-direction: column;
 	width: 320px;
+	border: none;
 	padding: var(--md);
-	border-color: var(--dark);
-	border-radius: 1vw;
 	background: var(--dark);
 }
 
 fieldset * {
-	padding: var(--xsm);
+	/* padding: var(--xsm); */
 	margin: var(--xsm) 0;
 }

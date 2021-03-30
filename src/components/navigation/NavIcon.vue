@@ -12,7 +12,6 @@
 <script>
 import Vue from 'vue';
 export default Vue.extend({
-	name: 'MenuIcon',
 	props: {
 		onToggle: {
 			type: Function,

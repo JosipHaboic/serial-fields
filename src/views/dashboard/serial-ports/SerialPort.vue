@@ -1,25 +1,33 @@
 <template>
 <div class="serial-port">
-	<table>
-		<tr>
-			<th>pnpId</th>
-			<th>productId</th>
-			<th>locationId</th>
-			<th>vendorId</th>
-			<th>serialNumber</th>
-			<th>manufacturer</th>
-		</tr>
-		<tr>
-			<td>{{ portInfo.pnpId }}</td>
-			<td>{{ portInfo.productId }}</td>
-			<td>{{ portInfo.locationId }}</td>
-			<td>{{ portInfo.vendorId }}</td>
-			<td>{{ portInfo.serialNumber }}</td>
-			<td>{{ portInfo.manufacturer }}</td>
-		</tr>
-	</table>
+	<div class="serial-port-info">
+		<div class="row">
+			<div class="col-6">pnpId</div>
+			<div class="col-6">{{ portInfo.pnpId }}</div>
+		</div>
+		<div class="row">
+			<div class="col-6">productId</div>
+			<div class="col-6">{{ portInfo.productId }}</div>
+		</div>
+		<div class="row">
+			<div class="col-6">locationId</div>
+			<div class="col-6">{{ portInfo.locationId }}</div>
+		</div>
+		<div class="row">
+			<div class="col-6">vendorId</div>
+			<div class="col-6">{{ portInfo.vendorId }}</div>
+		</div>
+		<div class="row">
+			<div class="col-6">serialNumber</div>
+			<div class="col-6">{{ portInfo.serialNumber }}</div>
+		</div>
+		<div class="row">
+			<div class="col-6">manufacturer</div>
+			<div class="col-6">{{ portInfo.manufacturer }}</div>
+		</div>
+	</div>
 
-	<fieldset class="mt-5">
+	<fieldset class="serial-port-ctrl">
 		<legend>Open Port</legend>
 
 		<label for="baud-rate">Baud Rate</label>
@@ -98,12 +106,6 @@ export default Vue.extend({
 			return [...this.listPorts].filter((item) => {
 				return item.path === this.$route.params.path;
 			})[0];
-		},
-		buttonText() {
-			if (this.isPortOpen === true) {
-				return 'Close Port';
-			}
-			return 'Open Port';
 		},
 	},
 	methods: {

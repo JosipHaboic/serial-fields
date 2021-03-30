@@ -8,7 +8,7 @@
 
 <script>
 import Vue from 'vue';
-import { icons } from './icons';
+import { icons } from '@/components/icons';
 
 export default Vue.extend({
 	components: {
