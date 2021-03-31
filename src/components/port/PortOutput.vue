@@ -1,6 +1,19 @@
 <template>
 	<div class="output">
-		{{ JSON.stringify(currentData) }}
+		<div class="row">
+			<div class="col-6">
+				<h2>Vin: {{ currentData.ADC.vin }}</h2>
+			</div>
+			<div class="col-6">
+				<h2>Vout: {{ currentData.ADC.vout }}</h2>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-12">
+				<h2>PWM: {{ currentData.PWM.dutyCycle }}%</h2>
+			</div>
+		</div>
 	</div>
 </template>
 
