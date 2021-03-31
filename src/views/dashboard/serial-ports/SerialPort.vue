@@ -1,35 +1,9 @@
 <template>
 <div class="serial-port">
-	<div class="serial-port-info">
-		<div class="row">
-			<div class="col-6">pnpId</div>
-			<div class="col-6">{{ portInfo.pnpId }}</div>
-		</div>
-		<div class="row">
-			<div class="col-6">productId</div>
-			<div class="col-6">{{ portInfo.productId }}</div>
-		</div>
-		<div class="row">
-			<div class="col-6">locationId</div>
-			<div class="col-6">{{ portInfo.locationId }}</div>
-		</div>
-		<div class="row">
-			<div class="col-6">vendorId</div>
-			<div class="col-6">{{ portInfo.vendorId }}</div>
-		</div>
-		<div class="row">
-			<div class="col-6">serialNumber</div>
-			<div class="col-6">{{ portInfo.serialNumber }}</div>
-		</div>
-		<div class="row">
-			<div class="col-6">manufacturer</div>
-			<div class="col-6">{{ portInfo.manufacturer }}</div>
-		</div>
-	</div>
+
+	<port-info v-if="portInfo" :portInfo="portInfo" />
 
 	<fieldset class="serial-port-ctrl">
-		<legend>Open Port</legend>
-
 		<label for="baud-rate">Baud Rate</label>
 		<select v-model="openPortOptions.baudRate">
 			<option v-for="baudRate in baudRates" :key="baudRate">{{ baudRate }}</option>
@@ -52,11 +26,13 @@
 		</select>
 
 		<label for="delimiter">Delimiter</label>
-		<input type="text" v-model="delimiter" value="\r\n" />
+		<input type="text" v-model="parserOptions.delimiter" />
 
 		<button v-if="isPortOpen" @click="closePort">Disconnect</button>
 		<button v-else @click="openPort">Connect</button>
 	</fieldset>
+
+	<port-output :path="this.$route.params.path"/>
 
 </div>
 </template>
@@ -65,8 +41,14 @@
 import Vue from 'vue';
 import gql from 'graphql-tag';
 import { BAUD_RATES } from '@/models';
+import PortOutput from '@/components/port/PortOutput.vue';
+import PortInfo from '@/components/port/PortInfo.vue';
 
 export default Vue.extend({
+	components: {
+		'port-output': PortOutput,
+		'port-info': PortInfo,
+	},
 	data: () => ({
 		listPorts: [],
 		openPortOptions: {
@@ -83,8 +65,10 @@ export default Vue.extend({
 			dataBits: 8,
 			highWaterMark: 64 * 1024,
 		},
+		parserOptions: {
+			delimiter: '\r\n',
+		},
 		baudRates: BAUD_RATES,
-		delimiter: '\r\n',
 		isPortOpen: false,
 	}),
 	apollo: {
@@ -98,7 +82,7 @@ export default Vue.extend({
 					path: this.$route.params.path,
 				};
 			},
-			pollInterval: 250,
+			pollInterval: 200,
 		},
 	},
 	computed: {
@@ -115,11 +99,9 @@ export default Vue.extend({
 					openPort(path: $path, openOptions: $openOptions, delimiter: $delimiter)
 				}`,
 				variables: {
-					// return {
 						path: this.$route.params.path,
 						openOptions: this.openPortOptions,
-						delimiter: this.delimiter,
-					// };
+						delimiter: '\r\n',
 				},
 			});
 		},
@@ -129,9 +111,7 @@ export default Vue.extend({
 					closePort(path: $path)
 				}`,
 				variables: {
-					// return {
 						path: this.$route.params.path,
-					// };
 				},
 			});
 		},

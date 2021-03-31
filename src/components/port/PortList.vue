@@ -1,16 +1,14 @@
 <template>
-<div class="port-list" v-if="ports.length > 0">
-  <div v-for="port in ports" :key="port.path" class="card m-xy-sm">
-	<div class="card-header s-btw p-xy-sm">
-    	<router-link class="link" :to="route(port.path)">
-    	  {{ port.path }}
-    	</router-link>
-  		<port-status :path="port.path" />
-	</div>
+<div class="container is-centered h-100" v-if="ports.length > 0">
+  <div v-for="port in ports" :key="port.path" class="port-link">
+    <router-link class="link" :to="route(port.path)">
+      {{ port.path }}
+    </router-link>
+  	<port-status :path="port.path" />
   </div>
 </div>
-<div v-else>
-  <p class="warning message is-centered">No serial ports detected</p>
+<div v-else class="container is-centered h-100">
+  <p class="info-text">No serial ports detected</p>
 </div>
 </template>
 
@@ -35,3 +33,30 @@ export default Vue.extend({
 	},
 });
 </script>
+
+<style>
+.port-link {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 20vw;
+	height: 10vh;
+	background: var(--dark);
+	box-shadow: 0 0 0 1px var(--color-0-3);
+	transition: background 1s;
+}
+
+.port-link:hover {
+	background: var(--color-0-3);
+	transition: background 1s;
+}
+
+.port-link .link {
+	font-size: 1.6rem;
+}
+
+.port-link .port-status {
+	height: 100%;
+	width: 1rem;
+}
+</style>

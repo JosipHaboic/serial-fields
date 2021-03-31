@@ -20,6 +20,7 @@ body {
 select {
 	color: var(--light);
 	background: var(--color-0-4);
+	padding: var(--xsm);
 	border: none;
 	outline: none;
 }

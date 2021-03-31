@@ -6,6 +6,11 @@
 @import './modules/dashboard.css';
 
 
+.info-text {
+	color: var(--color-0-1);
+	text-transform: uppercase;
+}
+
 #logo {
 	width: 25vw;
 	margin: 5vh 0 0 0;

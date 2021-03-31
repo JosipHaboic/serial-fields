@@ -1,7 +1,5 @@
 <template>
-	<div>
-		<port-list :ports="listPorts"/>
-	</div>
+	<port-list :ports="listPorts"/>
 </template>
 
 <script lang="ts">
@@ -15,12 +13,6 @@ export default Vue.extend({
 	},
 	data: () => ({
 		listPorts: new Array<object>(),
-		testPortList: [
-			{path: 'COM0'},
-			{path: 'COM1'},
-			{path: 'COM2'},
-			{path: 'COM5'},
-		],
 	}),
 	apollo: {
 		listPorts: {
