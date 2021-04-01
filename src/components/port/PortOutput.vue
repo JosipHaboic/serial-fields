@@ -36,7 +36,7 @@ export default Vue.extend({
 	},
 	apollo: {
 		currentData: {
-			query: gql`query ($path: String!) {
+			query: gql`query currentData($path: String!) {
 				currentData(path: $path) {ADC {vin, vout}, PWM {dutyCycle}}
 			}`,
 			variables() { // always write functions like this

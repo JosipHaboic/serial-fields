@@ -33,7 +33,7 @@ export default Vue.extend({
 	}),
 	apollo: {
 		listPorts: {
-			query: gql`query { listPorts {path, pnpId, productId, locationId, vendorId, serialNumber, manufacturer}}`,
+			query: gql`query listPorts { listPorts {path, pnpId, productId, locationId, vendorId, serialNumber, manufacturer}}`,
 		},
 	},
 	computed: {
