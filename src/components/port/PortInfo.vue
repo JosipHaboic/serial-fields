@@ -1,6 +1,6 @@
 <template>
+<div class="serial-port-info">
   <div class="row">
-<div class="port-info">
     <div class="col-6">pnpId</div>
     <div class="col-6">{{ portInfo.pnpId }}</div>
   </div>

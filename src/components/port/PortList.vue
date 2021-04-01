@@ -1,12 +1,11 @@
 <template>
 <div class="container is-centered h-100" v-if="ports.length > 0">
-  <div v-for="port in ports" :key="port.path" class="port-link">
-    <router-link class="link" :to="route(port.path)">
-      {{ port.path }}
+    <router-link v-for="port in ports" class="row port-link" :to="route(port.path)" :key="port.path">
+		<div class="col-6">{{ port.path }}</div>
+		<div class="col-6"><port-status :path="port.path" /></div>
     </router-link>
-  	<port-status :path="port.path" />
-  </div>
 </div>
+
 <div v-else class="container is-centered h-100">
   <p class="info-text">No serial ports detected</p>
 </div>
@@ -33,30 +32,3 @@ export default Vue.extend({
 	},
 });
 </script>
-
-<style>
-.port-link {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	width: 20vw;
-	height: 10vh;
-	background: var(--dark);
-	box-shadow: 0 0 0 1px var(--color-0-3);
-	transition: background 1s;
-}
-
-.port-link:hover {
-	background: var(--color-0-3);
-	transition: background 1s;
-}
-
-.port-link .link {
-	font-size: 1.6rem;
-}
-
-.port-link .port-status {
-	height: 100%;
-	width: 1rem;
-}
-</style>
