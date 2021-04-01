@@ -23,9 +23,6 @@
       <option>3</option>
     </select>
 
-    <label for="delimiter">Delimiter</label>
-    <input type="text" v-model="parserOptions.delimiter" />
-
     <button v-if="isPortOpen" @click="closePort">Disconnect</button>
     <button v-else @click="openPort">Connect</button>
   </fieldset>
@@ -58,9 +55,6 @@ export default Vue.extend({
 			dataBits: 8,
 			highWaterMark: 64 * 1024,
 		},
-		parserOptions: {
-			delimiter: '\r\n',
-		},
 		baudRates: BAUD_RATES,
 		isPortOpen: false,
 	}),
@@ -78,19 +72,19 @@ export default Vue.extend({
 	methods: {
 		openPort() {
 			this.$apollo.mutate({
-				mutation: gql`mutation ($path: String!, $openOptions: OpenOptions, $delimiter: String!) {
+				mutation: gql`mutation openPort($path: String!, $openOptions: OpenOptions, $delimiter: String!) {
 					openPort(path: $path, openOptions: $openOptions, delimiter: $delimiter)
 				}`,
 				variables: {
 						path: this.$route.params.path,
 						openOptions: this.openPortOptions,
-						delimiter: String.raw(this.parserOptions.delimiter),
+						delimiter: '\r\n',
 				},
 			});
 		},
 		closePort() {
 			this.$apollo.mutate({
-				mutation: gql`mutation ($path: String!) {
+				mutation: gql`mutation closePort($path: String!) {
 					closePort(path: $path)
 				}`,
 				variables: {
