@@ -11,10 +11,6 @@
 	height: calc(100vh - var(--top-nav-height));
 }
 
-.dashboard-view section {
-	width: 100%;
-}
-
 @media screen and (max-width: 425px) {
 	.dashboard-view {
 		width: 100%;

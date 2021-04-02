@@ -1,3 +1,21 @@
+
+/* Basic layout */
+.container {
+	display: flex;
+	/* justify-content: center; */
+	/* align-items: center; */
+	width: 100%;
+}
+
+.h-100 {
+	height: 100%;
+}
+
+/* Padding */
+.p-lg {
+	padding: var(--lg);
+}
+
 .row {
 	display: -ms-flexbox;
 	display: flex;
@@ -29,6 +47,7 @@
 
 .is-centered {
 	justify-content: center;
+	align-items: center;
 }
 
 div[class^="col-"] {
@@ -98,16 +117,4 @@ div[class^="col-"] {
 	.is-mobile {
 		min-width: 100%;
 	}
-}
-
-/* Basic layout */
-.container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-}
-
-.h-100 {
-	height: 100%;
 }

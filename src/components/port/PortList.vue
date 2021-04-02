@@ -1,8 +1,8 @@
 <template>
-<div class="container is-centered h-100" v-if="ports.length > 0">
-    <router-link v-for="port in ports" class="row port-link" :to="route(port.path)" :key="port.path">
-		<div class="col-6">{{ port.path }}</div>
-		<div class="col-6"><port-status :path="port.path" /></div>
+<div class="container p-lg" v-if="ports.length > 0">
+    <router-link v-for="port in ports" :to="route(port.path)" :key="port.path" class="port-link">
+		{{ port.path }}
+		<port-status :path="port.path" />
     </router-link>
 </div>
 
@@ -14,6 +14,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import PortStatus from '@/components/port/PortStatus.vue';
+
 
 export default Vue.extend({
 	components: {
@@ -32,3 +33,15 @@ export default Vue.extend({
 	},
 });
 </script>
+
+
+<style>
+.port-link {
+	width: 25vw;
+	height: 15vh;
+	font-size: var(--lg);
+	padding: var(--md);
+	background: var(--dark);
+	text-decoration: none;
+}
+</style>

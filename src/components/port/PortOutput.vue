@@ -1,20 +1,18 @@
 <template>
-	<div class="output">
-		<div class="row">
-			<div class="col-6">
-				<h2>Vin: {{ currentData.ADC.vin }}</h2>
-			</div>
-			<div class="col-6">
-				<h2>Vout: {{ currentData.ADC.vout }}</h2>
-			</div>
-		</div>
+<table>
+	<tr>
+		<th>Vin</th>
+		<th>Vout</th>
+		<th>Duty Cycle</th>
+	</tr>
 
-		<div class="row">
-			<div class="col-12">
-				<h2>PWM: {{ currentData.PWM.dutyCycle }}%</h2>
-			</div>
-		</div>
-	</div>
+	<tr>
+		<td>{{ currentData.ADC.vin }}</td>
+		<td>{{ currentData.ADC.vout }}</td>
+		<td>{{ currentData.PWM.dutyCycle }}%</td>
+	</tr>
+
+</table>
 </template>
 
 
@@ -51,7 +49,19 @@ export default Vue.extend({
 </script>
 
 <style>
-.output {
-	color: white;
+table {
+	width: 100%;
+	background: var(--dark);
+}
+th {
+	font-size: var(--xlg);
+	padding: var(--sm);
+	color: var(--color-2-0);
+}
+td {
+	padding: var(--sm);
+	font-size: var(--xlg);
+	color: var(--color-1-0);
+	max-width: 200px;
 }
 </style>
