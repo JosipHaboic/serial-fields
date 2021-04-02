@@ -28,10 +28,11 @@
   </fieldset>
 </template>
 
-<script>
+<script lang="ts">
 import Vue from 'vue';
 import gql from 'graphql-tag';
 import { BAUD_RATES } from '@/models';
+import { OpenOptions } from '@/models';
 
 export default Vue.extend({
 	props: {
@@ -54,7 +55,7 @@ export default Vue.extend({
 			xon: false,
 			dataBits: 8,
 			highWaterMark: 64 * 1024,
-		},
+		} as OpenOptions,
 		baudRates: BAUD_RATES,
 		isPortOpen: false,
 	}),
@@ -77,7 +78,7 @@ export default Vue.extend({
 				}`,
 				variables: {
 						path: this.$route.params.path,
-						openOptions: this.openPortOptions,
+						openOptions: this.openPortOptions as OpenOptions,
 						delimiter: '\r\n',
 				},
 			});
