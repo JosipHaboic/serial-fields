@@ -6,9 +6,9 @@
 		<th>Duty Cycle</th>
 	</tr>
 
-	<tr>
-		<td>{{ currentData.ADC.vin }}</td>
-		<td>{{ currentData.ADC.vout }}</td>
+	<tr v-if="currentData">
+		<td>{{ currentData.ADC.vin.toPrecision(5) }}</td>
+		<td>{{ currentData.ADC.vout.toPrecision(5) }}</td>
 		<td>{{ currentData.PWM.dutyCycle }}%</td>
 	</tr>
 
