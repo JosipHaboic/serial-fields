@@ -33,15 +33,3 @@ export default Vue.extend({
 	},
 });
 </script>
-
-
-<style>
-.port-link {
-	width: 25vw;
-	height: 15vh;
-	font-size: var(--lg);
-	padding: var(--md);
-	background: var(--dark);
-	text-decoration: none;
-}
-</style>

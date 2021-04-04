@@ -7,10 +7,10 @@
 	</div>
 
 	<div class="row">
-		<div class="col-6">
+		<div class="col-4">
 			<port-gate :path="this.$route.params.path" />
 		</div>
-		<div class="col-6">
+		<div class="col-8">
 			<port-info :path="this.$route.params.path"/>
 		</div>
 	</div>

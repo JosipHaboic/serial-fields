@@ -1,5 +1,5 @@
 <template>
-<div class="serial-port-info">
+<div class="serial-port-info" v-if="this.portInfo">
   <div class="row">
     <div class="col-6">pnpId</div>
     <div class="col-6">{{ this.portInfo.pnpId }}</div>
